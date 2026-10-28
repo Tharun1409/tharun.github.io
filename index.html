@@ -1,418 +1,437 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Jane Roe, Chief Technical Architect</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="aboutme.css">
-	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|PT+Sans:400,400i,700,700i&display=swap"
-	      rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anil Abburi | Senior .NET &amp; Azure Engineer</title>
+<meta name="description" content="Anil Abburi, senior .NET and Azure engineer with 17+ years of experience in custody, capital markets and healthcare platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef2f5; --surface:#ffffff; --ink:#0f2540; --muted:#4a5d73;
+  --line:#cfd9e2; --teal:#0b6f6a; --teal-soft:#d9eeed; --amber:#b87a12;
+  --serif:'IBM Plex Serif', Georgia, serif; --sans:'IBM Plex Sans', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:16px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(238,242,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--serif);font-weight:600;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand b{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--ink);color:#fff;font-size:14px}
+.links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.links a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+.links a:hover{color:var(--ink);background:#e1e8ee}
+.links a.on{color:var(--teal);background:var(--teal-soft)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,6vw,64px);line-height:1.05;margin:0 0 12px;letter-spacing:-.02em}
+.hero .role{font-size:20px;color:var(--teal);font-weight:600;margin:0 0 16px}
+.hero .tag{font-size:19px;color:var(--muted);max-width:52ch;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--teal);border-color:var(--teal)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.facts{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:12px;padding:8px 22px;margin:0}
+.facts div{padding:12px 0;border-bottom:1px solid var(--line)}
+.facts div:last-child{border-bottom:0}
+.facts dt{font-size:13px;color:var(--muted);margin:0}
+.facts dd{margin:2px 0 0;font-weight:600}
+
+/* sections */
+section.sec{padding:64px 0;border-top:1px solid var(--line)}
+.sec h2{font-family:var(--serif);font-size:clamp(28px,4vw,36px);margin:0 0 8px;letter-spacing:-.01em}
+.sec .lead{color:var(--muted);margin:0 0 36px;max-width:60ch}
+.about p{max-width:68ch;font-size:17px;margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:24px 0 0}
+.chip{padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+
+/* experience ledger */
+.ledger{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.when{font-weight:600}
+.when small{display:block;font-weight:400;color:var(--muted);margin-top:2px}
+.now{display:inline-block;margin-top:8px;padding:2px 10px;border-radius:999px;background:var(--teal);color:#fff;font-size:13px;font-weight:600}
+.row h3{font-family:var(--serif);font-size:22px;margin:0}
+.row .who{color:var(--teal);font-weight:600;margin:2px 0 10px}
+.row .sum{color:var(--muted);margin:0 0 12px;max-width:68ch}
+details{margin-bottom:14px}
+summary.more{list-style:none;cursor:pointer;font-weight:600;color:var(--teal);text-decoration:underline;display:inline-block;margin-bottom:8px}
+summary.more::-webkit-details-marker{display:none}
+summary.more::before{content:"\25B8  "}
+details[open] summary.more::before{content:"\25BE  "}
+ul.pts{margin:6px 0 0;padding-left:20px;max-width:72ch}
+ul.pts li{margin-bottom:6px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.stack li{font-size:13px;padding:3px 10px;border-radius:6px;background:var(--teal-soft);color:#084b47}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.skill h3{font-family:var(--serif);font-size:19px;margin:0}
+.skill p{margin:2px 0 14px;color:var(--amber);font-size:14px;font-weight:500;min-height:1.4em}
+.skill .stack li{background:#e8eef3;color:var(--ink)}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.edu div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.edu h3{font-family:var(--serif);font-size:19px;margin:0 0 4px}
+.edu p{margin:0;color:var(--muted)}
+
+/* contact + footer */
+.contact{background:var(--ink);color:#fff;border-radius:16px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+.contact h2{color:#fff}
+.contact p{color:#c6d3e0;margin:0 0 8px;max-width:46ch}
+.contact ul{list-style:none;margin:0;padding:0;display:grid;gap:14px;align-content:start}
+.contact li small{display:block;color:#9fb3c8;font-size:13px}
+.contact a{color:#fff;font-weight:600;word-break:break-all}
+footer.foot{background:#0a1a2e;color:#b5c4d4;padding:48px 0 28px;margin-top:64px}
+.foot .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot h4{color:#fff;font-family:var(--serif);margin:0 0 12px;font-size:16px}
+.foot p{margin:0 0 6px;font-size:14px;max-width:40ch}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot .legal{border-top:1px solid #1d3350;margin-top:32px;padding-top:18px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* one intro moment */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero .wrap>*{animation:rise .7s ease both}
+.hero .wrap>*:nth-child(2){animation-delay:.12s}
+
+@media (max-width:820px){
+  .hero .wrap,.contact,.foot .cols{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:10px}
+  .burger{display:block}
+  .links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--paper);padding:12px 24px;border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .contact{padding:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero .wrap>*{animation:none}
+}
+</style>
 </head>
-<body>
-<section class="left">
-</section>
+<body id="top">
 
-<section class="right">
-	<div class="scrim"></div>
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Anil Abburi, back to top"><b>AA</b>Anil Abburi</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Main">
+      <ul id="menu" class="links">
+        <li><a href="#about" class="on">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-	<div class="head">
-		<h1>Jane&nbsp;Roe</h1>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Anil Abburi</h1>
+        <p class="role">Senior .NET &amp; Azure Engineer</p>
+        <p class="tag">17+ years building web, service and messaging platforms for custody, capital markets and healthcare.</p>
+        <div class="btns">
+          <a class="btn primary" href="mailto:anil.abburi@gmail.com">Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/anil-abburi-3437531b1" target="_blank" rel="noreferrer">View LinkedIn</a>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Experience</dt><dd>17+ years</dd></div>
+        <div><dt>Current role</dt><dd>Business Analytics Senior Advisor, Cigna</dd></div>
+        <div><dt>Longest engagement</dt><dd>11 years with Euroclear Bank</dd></div>
+        <div><dt>Azure</dt><dd>7+ years hands-on</dd></div>
+        <div><dt>Domains</dt><dd>Custody, Banking, Healthcare, Capital Markets</dd></div>
+      </dl>
+    </div>
+  </div>
 
-		<p>Chief Technical Architect</p>
+  <section id="about" class="sec about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p class="lead">Who I am and what I am good at.</p>
+      <p>I am a full stack engineer on the Microsoft stack, with C#, ASP.NET MVC, .NET Core, WCF and SQL Server at the centre of my work. Most of my career has gone into systems where a wrong number has a real cost: securities settlement, cash movement and depot balances at Euroclear Bank, and analytics reporting at Cigna.</p>
+      <p>I have more than 12 years of functional knowledge in settlements, corporate actions, cash transfers, depot management and collateral management. On the technical side I am strongest at integrating .NET with IBM MQ, building reusable Web API components, tuning SQL, and shipping on Azure with CI/CD pipelines.</p>
+      <p>I also lead: pair programming, mentoring, architecture reviews and production support are part of how I work.</p>
+      <ul class="chips" aria-label="Domain knowledge">
+        <li class="chip">Settlements</li>
+        <li class="chip">Corporate Actions</li>
+        <li class="chip">Cash transfers</li>
+        <li class="chip">Depot management</li>
+        <li class="chip">Collateral management</li>
+        <li class="chip">Payment gateways</li>
+        <li class="chip">Healthcare analytics</li>
+      </ul>
+    </div>
+  </section>
 
-		<div class="contact-info">
-			<a href="#">
-				<i class="icon icon-mail">&#xe800;</i>
-				<span class="text">uppulatharun77@gmail.com</span>
-			</a>
+  <section id="experience" class="sec">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="lead">From ASP.NET web apps in 2009 to Azure and messaging platforms today.</p>
+      <ol class="ledger">
 
-			<a href="#">
-				<i class="icon icon-mobile">&#xe802;</i>
-				<span class="text">9876543210</span>
-			</a>
+        <li class="row">
+          <div class="when">Feb 2024 – Present<small>New Jersey, USA</small><span class="now">Current</span></div>
+          <div>
+            <h3>Cigna Healthcare: Reporting Hub &amp; Analyst App</h3>
+            <p class="who">Business Analytics Senior Advisor (Developer)</p>
+            <p class="sum">Reporting documents and the Analyst app that generates reports used by end users for analytics and process improvement.</p>
+            <details open>
+              <summary class="more">Details</summary>
+              <ul class="pts">
+                <li>Built business logic as reusable C# .NET Core class libraries and Web APIs that are easy to adopt for new client programs.</li>
+                <li>Wrote VBA report templates for the Analyst app, backed by Teradata.</li>
+                <li>Developed end to end applications with ASP.NET Core/MVC and Angular, secured with SAML 2.0 Windows login.</li>
+                <li>Tuned SQL Server queries and stored procedures; used SSIS to load data from DB2.</li>
+                <li>Worked in Scrum on Azure DevOps, mentored teammates and supported UAT, releases and production issues.</li>
+              </ul>
+            </details>
+            <ul class="stack" aria-label="Technologies"><li>C#</li><li>.NET Core</li><li>Web API</li><li>Angular</li><li>Teradata</li><li>SQL Server</li><li>SSIS</li><li>Azure DevOps</li></ul>
+          </div>
+        </li>
 
-			<a href="#">
-				<i class="icon icon-location">&#xe801;</i>
-				<span class="text">Bangalore, India</span>
-			</a>
+        <li class="row">
+          <div class="when">Apr 2019 – Feb 2024<small>New York, USA</small></div>
+          <div>
+            <h3>Euroclear Bank: Easyway Cash</h3>
+            <p class="who">Lead Full Stack Developer</p>
+            <p class="sum">Reporting for cash transactions in custody services and investment banking, such as bank transfers and provident funds, linked to securities settlement.</p>
+            <details open>
+              <summary class="more">Details</summary>
+              <ul class="pts">
+                <li>Led development of .NET Core class libraries and Web APIs integrated with IBM MQ and COM interop components, improving processing speed and making integration with multiple clients easier.</li>
+                <li>Built RESTful services with WCF and end to end web apps with ASP.NET Core/MVC and Angular.</li>
+                <li>Worked with Teradata 17.0, SQL Server tuning and SSIS packages for DB2 data loads.</li>
+                <li>Practised TDD with NUnit; ran architecture reviews and design workshops using MVC, 3-tier and SOA patterns.</li>
+                <li>Owned production issues end to end, from UAT support to release sign-off.</li>
+              </ul>
+            </details>
+            <ul class="stack" aria-label="Technologies"><li>C#</li><li>.NET Core</li><li>IBM MQ</li><li>WCF</li><li>Angular</li><li>Teradata</li><li>NUnit</li><li>Azure</li></ul>
+          </div>
+        </li>
 
-			<a href="#">
-				<i class="icon icon-github">&#xf113;</i>
-				<span class="text">github.com/janeroe</span>
-			</a>
+        <li class="row">
+          <div class="when">Feb 2017 – Mar 2019<small>New York, USA</small></div>
+          <div>
+            <h3>Euroclear Bank: Easyway Depot</h3>
+            <p class="who">Lead Full Stack Developer</p>
+            <p class="sum">Reporting for securities balances and movements, part of the custody services suite.</p>
+            <details>
+              <summary class="more">Details</summary>
+              <ul class="pts">
+                <li>Delivered .NET class libraries and Web APIs integrated with IBM MQ and COM components for multiple client programs.</li>
+                <li>Built WCF RESTful services and ASP.NET MVC / Angular front ends.</li>
+                <li>Optimised SQL Server procedures and reports; versioned work with TFS and GIT.</li>
+              </ul>
+            </details>
+            <ul class="stack" aria-label="Technologies"><li>C#</li><li>ASP.NET MVC</li><li>WCF</li><li>IBM MQ</li><li>SQL Server</li><li>Angular</li><li>TFS</li></ul>
+          </div>
+        </li>
 
-			<a href="#">
-				<i class="icon icon-stackoverflow">&#xf16c;</i>
-				<span class="text">janeroe</span>
-			</a>
-		</div>
-	</div>
+        <li class="row">
+          <div class="when">Feb 2013 – Jan 2017<small>New York, USA</small></div>
+          <div>
+            <h3>Euroclear Bank: Easyway Settlement</h3>
+            <p class="who">Senior Full Stack Developer</p>
+            <p class="sum">Reporting for securities settlement instructions and best matching with counterparties, used by CSDs to buy and sell securities.</p>
+            <details>
+              <summary class="more">Details</summary>
+              <ul class="pts">
+                <li>Developed business logic in C# class libraries and Web APIs, integrated with IBM MQ.</li>
+                <li>Built services and web front ends used by Central Securities Depositories.</li>
+                <li>Wrote SQL Server stored procedures, SSIS packages and SSRS reports.</li>
+              </ul>
+            </details>
+            <ul class="stack" aria-label="Technologies"><li>C#</li><li>ASP.NET MVC</li><li>WCF</li><li>IBM MQ</li><li>SQL Server</li><li>SSRS</li><li>SSIS</li></ul>
+          </div>
+        </li>
 
-	<section class="section intro">
-		<h2>About</h2>
+        <li class="row">
+          <div class="when">Nov 2011 – Feb 2013<small>Mumbai, India</small></div>
+          <div>
+            <h3>Quantum Phinance (for Siemens): Insight Corp</h3>
+            <p class="who">.NET Developer</p>
+            <p class="sum">Application reporting share market transactions for Siemens.</p>
+            <details>
+              <summary class="more">Details</summary>
+              <ul class="pts">
+                <li>Handled requirements, database design and 3-tier architecture.</li>
+                <li>Built ASP.NET MVC pages, custom user controls, and Crystal Reports.</li>
+              </ul>
+            </details>
+            <ul class="stack" aria-label="Technologies"><li>ASP.NET MVC</li><li>C#</li><li>SQL Server 2008</li><li>Crystal Reports</li><li>jQuery</li></ul>
+          </div>
+        </li>
 
-		<p>
-			Expert in front-end development with more than 10 years of experience in providing cutting-edge solutions to business problems
-			for top companies like Apple, Google and Microsoft.
-		</p>
-	</section>
+        <li class="row">
+          <div class="when">Oct 2010 – Nov 2011<small>Bangalore, India</small></div>
+          <div>
+            <h3>E-Softsys: Self Storage Manager</h3>
+            <p class="who">Developer</p>
+            <p class="sum">Product used by self storage operators in the US, UK and Canada to capture customer and unit data.</p>
+            <details>
+              <summary class="more">Details</summary>
+              <ul class="pts">
+                <li>Built web pages, user controls, schemas and stored procedures; documented unit tests and fixed defects.</li>
+              </ul>
+            </details>
+            <ul class="stack" aria-label="Technologies"><li>ASP.NET</li><li>VB.NET</li><li>SQL Server 2008</li><li>jQuery</li></ul>
+          </div>
+        </li>
 
-	<section class="section">
-		<h2>Skills</h2>
+        <li class="row">
+          <div class="when">May 2009 – Oct 2010<small>Visakhapatnam, India</small></div>
+          <div>
+            <h3>Symbiosys Technologies: Rail Road Containers</h3>
+            <p class="who">Developer</p>
+            <p class="sum">System for the South African government to record and report goods transported by rail.</p>
+            <details>
+              <summary class="more">Details</summary>
+              <ul class="pts">
+                <li>Worked on requirements, database design and ASP.NET web pages against SQL Server 2005.</li>
+              </ul>
+            </details>
+            <ul class="stack" aria-label="Technologies"><li>ASP.NET</li><li>VB.NET</li><li>SQL Server 2005</li></ul>
+          </div>
+        </li>
 
-		<div class="chips">
-			<div class="chip">HTML</div>
-			<div class="chip">CSS</div>
-			<div class="chip">JavaScript</div>
-			<div class="chip">Angular</div>
-			<div class="chip">React</div>
-			<div class="chip">jQuery</div>
-			<div class="chip">TypeScript</div>
-			<div class="chip">RxJs</div>
-			<div class="chip">Ember</div>
-			<div class="chip">bootstrap</div>
-			<div class="chip">Web Components</div>
-			<div class="chip">Polymer</div>
-			<div class="chip">.NET</div>
-			<div class="chip">C#</div>
-			<div class="chip">SQL</div>
-			<div class="chip">SalesForce</div>
-			<div class="chip">ASP.NET</div>
-			<div class="chip">ASP.NET MVC</div>
-			<div class="chip">Silverlight</div>
-			<div class="chip">Java</div>
-			<div class="chip">Photoshop</div>
-			<div class="chip">Flash</div>
-		</div>
-	</section>
+      </ol>
+    </div>
+  </section>
 
-	<section class="section">
+  <section id="skills" class="sec">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lead">Grouped by what I use them for.</p>
+      <div class="skills">
+        <div class="skill"><h3>Backend</h3><p>My main ground</p>
+          <ul class="stack"><li>C#</li><li>VB.NET</li><li>.NET Core</li><li>ASP.NET MVC</li><li>Web API</li><li>WCF</li><li>REST</li><li>Microservices</li><li>LINQ</li><li>Entity Framework</li></ul></div>
+        <div class="skill"><h3>Cloud &amp; DevOps</h3><p>7+ years on Azure</p>
+          <ul class="stack"><li>Azure App Services</li><li>Azure Functions</li><li>Azure SQL</li><li>Azure Storage</li><li>Service Bus</li><li>Key Vault</li><li>Azure AD</li><li>ARM Templates</li><li>Azure DevOps CI/CD</li><li>Git</li><li>TFS</li></ul></div>
+        <div class="skill"><h3>Messaging &amp; Integration</h3><p>IBM MQ specialist</p>
+          <ul class="stack"><li>IBM MQ</li><li>MQ Clusters</li><li>MQSC &amp; PCF</li><li>Queue Managers</li><li>RabbitMQ</li><li>COM+ / Interop</li><li>SAML 2.0</li><li>SSO with LDAP-AD</li></ul></div>
+        <div class="skill"><h3>Data</h3><p>Query tuning and migration</p>
+          <ul class="stack"><li>SQL Server</li><li>T-SQL</li><li>Teradata</li><li>SSIS</li><li>SSRS</li><li>Replication</li><li>Log Shipping</li><li>Mirroring</li><li>Data migration</li></ul></div>
+        <div class="skill"><h3>Frontend</h3><p></p>
+          <ul class="stack"><li>Angular</li><li>AngularJS</li><li>JavaScript</li><li>jQuery</li><li>HTML5</li><li>CSS</li><li>AJAX</li><li>Telerik</li></ul></div>
+        <div class="skill"><h3>Security</h3><p></p>
+          <ul class="stack"><li>Secure coding</li><li>SAST / DAST</li><li>Dependency scanning (SCA)</li><li>Secrets management</li><li>Container &amp; infra security</li></ul></div>
+        <div class="skill"><h3>Practices</h3><p></p>
+          <ul class="stack"><li>TDD &amp; NUnit</li><li>Design patterns</li><li>SOA</li><li>Scrum / Agile</li><li>Pair programming</li><li>Code reviews</li><li>Cursor AI</li></ul></div>
+      </div>
+    </div>
+  </section>
 
-		<h2>Work Experience (10 Years)</h2>
+  <section id="education" class="sec">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="edu" style="margin-top:28px">
+        <div><h3>Master of Computer Applications</h3><p>Osmania University, Hyderabad</p><p>May 2009</p></div>
+        <div><h3>Bachelor of Science</h3><p>Andhra University, Visakhapatnam</p><p>June 2006</p></div>
+      </div>
+    </div>
+  </section>
 
-		<div class="experience">
-			<div class="top-row">
-				<h3>Chief Architect, Apple</h3>
+  <section id="contact" class="sec">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's talk</h2>
+          <p>Open to senior .NET, Azure and integration roles. Send a short note about the project and I will reply by email.</p>
+        </div>
+        <ul>
+          <li><small>Email</small><a href="mailto:anil.abburi@gmail.com">anil.abburi@gmail.com</a></li>
+          <li><small>LinkedIn</small><a href="https://www.linkedin.com/in/anil-abburi-3437531b1" target="_blank" rel="noreferrer">linkedin.com/in/anil-abburi-3437531b1</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
 
-				<div class="duration">
-					<span>05/2016</span>&nbsp;&mdash;&nbsp;<span>Present</span>
-				</div>
-			</div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Anil Abburi</h4>
+        <p>Senior .NET &amp; Azure Engineer</p>
+        <p>Custody services, capital markets and healthcare analytics on the Microsoft stack.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:anil.abburi@gmail.com">anil.abburi@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/anil-abburi-3437531b1" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>&copy; <span id="year">2026</span> Anil Abburi</span>
+      <span>Built with HTML and CSS</span>
+    </div>
+  </div>
+</footer>
 
-			<h4>Achievements / Tasks</h4>
+<script>
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  burger.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
 
-			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-			</ul>
+  // Highlight the nav link of the section in view
+  var links = menu.querySelectorAll('a');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      links.forEach(function (a) {
+        a.classList.toggle('on', a.getAttribute('href') === '#' + entry.target.id);
+      });
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  ['about', 'experience', 'skills', 'education', 'contact'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
 
-			<p class="manager">
-				<span>Contact:</span>
-				<span>Tim Cook, CEO</span>
-			</p>
-		</div>
-
-		<div class="experience">
-
-			<div class="top-row">
-				<h3>Software Architect, Google</h3>
-
-				<div class="duration">
-					<span>01/2012</span>&nbsp;&mdash;&nbsp;<span>04/2016</span>
-				</div>
-			</div>
-
-			<h4>Achievements / Tasks</h4>
-
-			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-			</ul>
-
-			<p class="manager">
-				<span>Contact:</span>
-				<span>Vasil Denchev, Chief Software Architect</span>
-			</p>
-		</div>
-
-		<div class="experience">
-			<div class="top-row">
-				<h3>Associate Architect, Microsoft</h3>
-
-				<div class="duration">
-					<span>01/2012</span>&nbsp;&mdash;&nbsp;<span>04/2010</span>
-				</div>
-			</div>
-
-			<h4>Achievements / Tasks</h4>
-
-			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar.</li>
-			</ul>
-
-			<p class="manager">
-				<span>Contact:</span>
-				<span>Ray Ozzie, Software Architect</span>
-			</p>
-		</div>
-	</section>
-
-	<section class="section">
-		<h2>Education</h2>
-
-		<div class="education">
-			<div class="top-row">
-				<h3>Massachusetts Institute of Technology</h3>
-
-				<div class="duration">
-					<span>02/2010</span>&nbsp;&mdash;&nbsp;<span>02/2006</span>
-				</div>
-			</div>
-
-			<h4>MS Computer Science</h4>
-		</div>
-
-		<div class="education">
-			<div class="top-row">
-				<h3>Columbia University</h3>
-
-				<div class="duration">
-					<span>01/2006</span>&nbsp;&mdash;&nbsp;<span>01/2004</span>
-				</div>
-			</div>
-
-			<h4>Electronics &amp; Communication Enginnering</h4>
-		</div>
-
-		<div class="education">
-			<div class="top-row">
-				<h3>Carnegie Vanguard High School</h3>
-
-				<div class="duration">
-					<span>06/1992</span>&nbsp;&mdash;&nbsp;<span>05/2004</span>
-				</div>
-			</div>
-
-			<h4>School Education</h4>
-		</div>
-	</section>
-
-	<section class="section">
-		<h2>Achievements</h2>
-
-		<ul>
-			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-			<li>Ut enim ad minim veniam, quis nostrud exercitation</li>
-			<li>Duis aute irure dolor in reprehenderit</li>
-			<li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
-			<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat</li>
-			<li>Lorem Ipsum dolor sit amet, consectetur adipiscing</li>
-		</ul>
-	</section>
-
-	<section class="section">
-		<h2>Personal Projects</h2>
-
-		<div class="cards">
-			<div class="card">
-				<div class="card-left">
-					<img src="assets/project-1.jpeg" />
-				</div>
-				<div class="card-right">
-					<h4><a href="#">l.e.g.o</a></h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.
-					</p>
-					<div class="reputation">
-						<div>
-							<span>Stars:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Watchers:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Forks:</span>
-							<span>100</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-left">
-					<img src="assets/project-2.jpeg" />
-				</div>
-				<div class="card-right">
-					<h4><a href="#">musquito</a></h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.
-					</p>
-					<div class="reputation">
-						<div>
-							<span>Stars:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Watchers:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Forks:</span>
-							<span>100</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-left">
-					<img src="assets/project-3.jpeg" />
-				</div>
-				<div class="card-right">
-					<h4><a href="#">JustBlog</a></h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.
-					</p>
-					<div class="reputation">
-						<div>
-							<span>Stars:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Watchers:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Forks:</span>
-							<span>100</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-left">
-					<img src="assets/project-4.jpeg" />
-				</div>
-				<div class="card-right">
-					<h4><a href="#">fibonacci</a></h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar, risus ac porta sagittis.
-					</p>
-					<div class="reputation">
-						<div>
-							<span>Stars:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Watchers:</span>
-							<span>100</span>
-						</div>
-
-						<div>
-							<span>Forks:</span>
-							<span>100</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="section">
-		<h2>Languages</h2>
-
-		<div class="languages">
-			<div class="language">
-				<div>English</div>
-				<div class="fluency">
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span></span>
-				</div>
-			</div>
-
-			<div class="language">
-				<div>Tamil</div>
-				<div class="fluency">
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span></span>
-				</div>
-			</div>
-
-			<div class="language">
-				<div>Hindi</div>
-				<div class="fluency">
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span class="selected"></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="section">
-		<h2>Interests</h2>
-
-		<ul class="interests">
-			<li>Open Source Development</li>
-			<li>Learning new stuff</li>
-			<li>Building stuff</li>
-			<li>Blogging</li>
-			<li>Guitar</li>
-			<li>Listening to music</li>
-			<li>Painting</li>
-			<li>Killing Musquitoes</li>
-			<li>Watching Stupid Movies</li>
-			<li>Killing Illuminati</li>
-			<li>Finding My History</li>
-		</ul>
-	</section>
-
-	<footer>
-		<section class="social-links">
-			<a href="#">
-				<i class="icon icon-facebook-official">&#xf230;</i>
-			</a>
-			<a href="#">
-				<i class="icon icon-twitter">&#xf309;</i>
-			</a>
-			<a href="#">
-				<i class="icon icon-squared">&#xf30c;</i>
-			</a>
-		</section>
-	</footer>
-</section>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
